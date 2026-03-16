@@ -108,6 +108,13 @@ counts := maputil.CountBy(users, func(u User) string {
 | `CountBy` | Count elements per group |
 | `UniqueBy` | Last element per group |
 
+## Development
+
+```bash
+go test ./...
+go vet ./...
+```
+
 ## License
 
 MIT
