@@ -4,7 +4,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-maputil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-maputil)
 [![License](https://img.shields.io/github/license/philiprehberger/go-maputil)](LICENSE)
 
-Generic map utilities for Go. Filter, transform, merge, group, and more.
+Generic map utilities for Go. Filter, transform, merge, group, and more
 
 ## Installation
 
