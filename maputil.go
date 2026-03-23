@@ -151,3 +151,88 @@ func Contains[K comparable, V any](m map[K]V, key K) bool {
 func Size[K comparable, V any](m map[K]V) int {
 	return len(m)
 }
+
+// Any reports whether at least one entry in the map satisfies the predicate.
+// Returns false for an empty map.
+func Any[K comparable, V any](m map[K]V, pred func(K, V) bool) bool {
+	for k, v := range m {
+		if pred(k, v) {
+			return true
+		}
+	}
+	return false
+}
+
+// All reports whether every entry in the map satisfies the predicate.
+// Returns true for an empty map (vacuous truth).
+func All[K comparable, V any](m map[K]V, pred func(K, V) bool) bool {
+	for k, v := range m {
+		if !pred(k, v) {
+			return false
+		}
+	}
+	return true
+}
+
+// GetOrDefault returns the value for the given key if it exists,
+// otherwise it returns the provided fallback value.
+func GetOrDefault[K comparable, V any](m map[K]V, key K, fallback V) V {
+	if v, ok := m[key]; ok {
+		return v
+	}
+	return fallback
+}
+
+// Find returns the first entry in the map that satisfies the predicate,
+// along with a boolean indicating whether a match was found.
+// Because map iteration order is non-deterministic, the "first" match
+// is arbitrary when multiple entries satisfy the predicate.
+func Find[K comparable, V any](m map[K]V, pred func(K, V) bool) (K, V, bool) {
+	for k, v := range m {
+		if pred(k, v) {
+			return k, v, true
+		}
+	}
+	var zeroK K
+	var zeroV V
+	return zeroK, zeroV, false
+}
+
+// Partition splits a map into two maps based on the predicate.
+// The first returned map contains entries where the predicate returns true,
+// and the second contains entries where it returns false.
+func Partition[K comparable, V any](m map[K]V, pred func(K, V) bool) (map[K]V, map[K]V) {
+	matching := make(map[K]V)
+	rest := make(map[K]V)
+	for k, v := range m {
+		if pred(k, v) {
+			matching[k] = v
+		} else {
+			rest[k] = v
+		}
+	}
+	return matching, rest
+}
+
+// Diff compares two maps and returns three maps:
+//   - added: keys present in b but not in a (values from b)
+//   - removed: keys present in a but not in b (values from a)
+//   - changed: keys present in both with different values (values from b)
+func Diff[K comparable, V comparable](a, b map[K]V) (added, removed, changed map[K]V) {
+	added = make(map[K]V)
+	removed = make(map[K]V)
+	changed = make(map[K]V)
+	for k, v := range b {
+		if av, ok := a[k]; !ok {
+			added[k] = v
+		} else if av != v {
+			changed[k] = v
+		}
+	}
+	for k, v := range a {
+		if _, ok := b[k]; !ok {
+			removed[k] = v
+		}
+	}
+	return added, removed, changed
+}

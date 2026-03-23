@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0
+
+- Add `Any` — true if any entry matches predicate
+- Add `All` — true if all entries match predicate
+- Add `GetOrDefault` — get value with fallback for missing keys
+- Add `Find` — return first entry matching predicate
+- Add `Partition` — split map into matching and non-matching maps
+- Add `Diff` — compare two maps, returning added, removed, and changed entries
+
 ## 0.1.3
 
 - Consolidate README badges onto single line, fix CHANGELOG format
