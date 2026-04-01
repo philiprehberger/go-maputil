@@ -1,6 +1,8 @@
 # go-maputil
 
-[![CI](https://github.com/philiprehberger/go-maputil/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-maputil/actions/workflows/ci.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-maputil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-maputil) [![License](https://img.shields.io/github/license/philiprehberger/go-maputil)](LICENSE) [![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![CI](https://github.com/philiprehberger/go-maputil/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-maputil/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-maputil.svg)](https://pkg.go.dev/github.com/philiprehberger/go-maputil)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/go-maputil)](https://github.com/philiprehberger/go-maputil/commits/main)
 
 Generic map utilities for Go. Filter, transform, merge, group, and more
 
@@ -182,6 +184,24 @@ go test ./...
 go vet ./...
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/go-maputil)
+
+🐛 [Report issues](https://github.com/philiprehberger/go-maputil/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/go-maputil/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
